@@ -1,0 +1,1 @@
+Contains information on how to add another monitoring configuration.

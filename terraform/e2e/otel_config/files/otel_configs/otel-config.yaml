@@ -1,0 +1,21 @@
+exporters:
+  awsxray:
+    region: us-west-2
+processors:
+  batch: null
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+service:
+  pipelines:
+    traces/xray:
+      exporters:
+        - awsxray
+      processors:
+        - batch
+      receivers:
+        - otlp

@@ -118,6 +118,11 @@ resource "aws_iam_role_policy_attachment" "cwagent_ecr_read_only_policy_attachme
   role       = aws_iam_role.cwagent_role.name
 }
 
+resource "aws_iam_role_policy_attachment" "cwagent_ec2_container_service_policy_attachment" {
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceforEC2Role"
+  role       = aws_iam_role.cwagent_role.name
+}
+
 resource "aws_iam_instance_profile" "cwagent_instance_profile" {
   name = module.common.cwa_iam_instance_profile
   role = aws_iam_role.cwagent_role.name
