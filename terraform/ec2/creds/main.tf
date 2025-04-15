@@ -173,6 +173,7 @@ resource "null_resource" "integration_test_run" {
 
 data "aws_ami" "latest" {
   most_recent = true
+  owners = ["amazon"]
 
   filter {
     name   = "name"

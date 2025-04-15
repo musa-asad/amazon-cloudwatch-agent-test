@@ -80,6 +80,7 @@ resource "aws_instance" "integration-test" {
 
 data "aws_ami" "latest" {
   most_recent = true
+  owners = ["amazon"]
 
   filter {
     name   = "name"

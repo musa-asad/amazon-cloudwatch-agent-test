@@ -314,6 +314,7 @@ resource "null_resource" "integration_test_run_validator_custom_start" {
 
 data "aws_ami" "latest" {
   most_recent = true
+  owners = ["amazon"]
 
   filter {
     name   = "name"
